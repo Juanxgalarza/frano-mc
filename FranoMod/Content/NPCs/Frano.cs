@@ -26,7 +26,6 @@ namespace FranoMod.Content.NPCs
 
 		// Textura alternativa para cuando tiene el traje
 		private Asset<Texture2D> _suitedTexture;
-		private Asset<Texture2D> _suitedHeadTexture;
 
 		public override void SetStaticDefaults()
 		{
@@ -67,7 +66,6 @@ namespace FranoMod.Content.NPCs
 		{
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
-				BestiaryDatabaseTileIDsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 				new FlavorTextBestiaryInfoElement(
 					"Frano es un tipo misterioso que apareció atado en la superficie. " +
 					"Nadie sabe bien de dónde viene, pero tiene buenos contactos y una tienda variada."

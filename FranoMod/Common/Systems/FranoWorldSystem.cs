@@ -142,12 +142,17 @@ namespace FranoMod.Common.Systems
 			float chestTileX = chestWorld.X / 16f;
 			float chestTileY = chestWorld.Y / 16f;
 
-			// Convertir coordenadas de tile a coordenadas del mapa
-			float mapX = (chestTileX - Main.mapMinX) * Main.mapScale + Main.mapMinimapDefaultX;
-			float mapY = (chestTileY - Main.mapMinY) * Main.mapScale + Main.mapMinimapDefaultY;
+			// Convertir coordenadas de tile a coordenadas del mapa fullscreen
+			float mapScale = Main.mapFullscreenScale;
+			Vector2 mapCenter = Main.mapFullscreenPos;
+			float screenCenterX = Main.screenWidth / 2f;
+			float screenCenterY = Main.screenHeight / 2f;
+
+			float mapX = (chestTileX - mapCenter.X) * mapScale + screenCenterX;
+			float mapY = (chestTileY - mapCenter.Y) * mapScale + screenCenterY;
 
 			// Verificar si está visible en el mapa
-			if (mapX < 0 || mapY < 0 || mapX > Main.screenWidth || mapY > Main.screenHeight)
+			if (mapX < -20 || mapY < -20 || mapX > Main.screenWidth + 20 || mapY > Main.screenHeight + 20)
 				return;
 
 			// Dibujar un marcador simple (cuadrado rojo con borde)
