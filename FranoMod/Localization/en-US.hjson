@@ -1,0 +1,42 @@
+Mods: {
+	FranoMod: {
+		NPCs: {
+			Frano: {
+				DisplayName: Frano
+			}
+			BoundFrano: {
+				DisplayName: Frano (Bound)
+			}
+		}
+
+		Items: {
+			OrdenDeDetencion: {
+				DisplayName: "Arrest Warrant: Frano"
+				Tooltip: An official paper with an arrest warrant for Frano. Better return it to him.
+			}
+			ElTraje: {
+				DisplayName: The Suit
+				Tooltip: An elegant tuxedo suit. Frano wants it back.
+			}
+			Pesto: {
+				DisplayName: Pesto
+				Tooltip: "'A worn green revolver, but reliable.' - Frano"
+			}
+			BalaPesto: {
+				DisplayName: Pesto Bullet
+				Tooltip: Special ammo for the Pesto revolver.
+			}
+		}
+
+		Projectiles: {
+			PestoProjectile: {
+				DisplayName: Pesto Bullet
+			}
+		}
+
+		Conditions: {
+			Quest1Done: Quest "Escape the Law" completed
+			Quest2Done: Quest "Bring the Clothes" completed
+		}
+	}
+}

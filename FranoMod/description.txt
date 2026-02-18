@@ -1,0 +1,9 @@
+Agrega a Frano, un misterioso NPC que aparece atado en la superficie.
+Liberalo para desbloquear su tienda y embarcarte en una serie de quests modulares.
+
+Incluye:
+- Frano: NPC con tienda y sistema de quests
+- Quest "Escapar de la ley": recuperá la orden de detención
+- Quest "Traer la ropa": encontrá el traje para Frano
+- Pesto: un revólver verde básico gastado
+- Sistema de quests modular y extensible
