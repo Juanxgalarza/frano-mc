@@ -11,7 +11,6 @@ namespace FranoMod.Content.NPCs
 	/// Aparece en shorts y sin remera, atado como el Goblin Tinkerer.
 	/// Al liberarlo, da una mini-recompensa y permite que Frano aparezca como town NPC.
 	/// </summary>
-	[AutoloadHead]
 	public class BoundFrano : ModNPC
 	{
 		public override void SetStaticDefaults()
