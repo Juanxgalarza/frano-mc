@@ -1,0 +1,42 @@
+Mods: {
+	FranoMod: {
+		NPCs: {
+			Frano: {
+				DisplayName: Frano
+			}
+			BoundFrano: {
+				DisplayName: Frano (Atado)
+			}
+		}
+
+		Items: {
+			OrdenDeDetencion: {
+				DisplayName: "Orden de Detención: Frano"
+				Tooltip: Un papel oficial con una orden de detención a nombre de Frano. Mejor devolvérselo.
+			}
+			ElTraje: {
+				DisplayName: El Traje
+				Tooltip: Un elegante traje de smoking. Frano lo quiere de vuelta.
+			}
+			Pesto: {
+				DisplayName: Pesto
+				Tooltip: "'Un revólver verde gastado, pero confiable.' - Frano"
+			}
+			BalaPesto: {
+				DisplayName: Bala de Pesto
+				Tooltip: Munición especial para el revólver Pesto.
+			}
+		}
+
+		Projectiles: {
+			PestoProjectile: {
+				DisplayName: Bala de Pesto
+			}
+		}
+
+		Conditions: {
+			Quest1Done: Quest "Escapar de la ley" completado
+			Quest2Done: Quest "Traer la ropa" completado
+		}
+	}
+}

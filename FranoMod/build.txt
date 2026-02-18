@@ -1,0 +1,3 @@
+displayName = Frano NPC Mod
+author = Juanxgalarza
+version = 1.0.0
