@@ -26,6 +26,46 @@ Mods: {
 				DisplayName: Bala de Pesto
 				Tooltip: Munición especial para el revólver Pesto.
 			}
+			CelularDeFrano: {
+				DisplayName: Celular de Frano
+				Tooltip: El celular nuevo de Frano. Mejor devolvérselo antes de que se ponga nervioso.
+			}
+			ElGorro: {
+				DisplayName: El Gorro
+				Tooltip: Un beanie gastado pero resistente. Se puede mejorar con minerales en un yunque.
+			}
+			ElGorritoDeCobre: {
+				DisplayName: El Gorrito de Cobre
+				Tooltip: El Gorro reforzado con cobre. Se puede revertir en una mesa de trabajo.
+			}
+			ElGorritoDeEstanio: {
+				DisplayName: El Gorrito de Estaño
+				Tooltip: El Gorro reforzado con estaño. Se puede revertir en una mesa de trabajo.
+			}
+			ElGorritoDeHierro: {
+				DisplayName: El Gorrito de Hierro
+				Tooltip: El Gorro reforzado con hierro. Se puede revertir en una mesa de trabajo.
+			}
+			ElGorritoDePlomo: {
+				DisplayName: El Gorrito de Plomo
+				Tooltip: El Gorro reforzado con plomo. Se puede revertir en una mesa de trabajo.
+			}
+			ElGorritoDePlata: {
+				DisplayName: El Gorrito de Plata
+				Tooltip: El Gorro reforzado con plata. Se puede revertir en una mesa de trabajo.
+			}
+			ElGorritoDeTungsteno: {
+				DisplayName: El Gorrito de Tungsteno
+				Tooltip: El Gorro reforzado con tungsteno. Se puede revertir en una mesa de trabajo.
+			}
+			ElGorritoDeOro: {
+				DisplayName: El Gorrito de Oro
+				Tooltip: El Gorro reforzado con oro. Reluce con estilo. Se puede revertir en una mesa de trabajo.
+			}
+			ElGorritoDePlatino: {
+				DisplayName: El Gorrito de Platino
+				Tooltip: El Gorro reforzado con platino. Lo más fino que hay. Se puede revertir en una mesa de trabajo.
+			}
 		}
 
 		Projectiles: {
@@ -37,6 +77,7 @@ Mods: {
 		Conditions: {
 			Quest1Done: Quest "Escapar de la ley" completado
 			Quest2Done: Quest "Traer la ropa" completado
+			Quest3Done: Quest "Buscar el celular" completado
 		}
 	}
 }

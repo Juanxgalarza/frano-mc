@@ -26,6 +26,46 @@ Mods: {
 				DisplayName: Pesto Bullet
 				Tooltip: Special ammo for the Pesto revolver.
 			}
+			CelularDeFrano: {
+				DisplayName: Frano's Phone
+				Tooltip: Frano's new phone. Better return it before he gets nervous.
+			}
+			ElGorro: {
+				DisplayName: The Beanie
+				Tooltip: A worn but sturdy beanie. Can be upgraded with ore bars at an anvil.
+			}
+			ElGorritoDeCobre: {
+				DisplayName: Copper Beanie
+				Tooltip: The Beanie reinforced with copper. Can be reversed at a work bench.
+			}
+			ElGorritoDeEstanio: {
+				DisplayName: Tin Beanie
+				Tooltip: The Beanie reinforced with tin. Can be reversed at a work bench.
+			}
+			ElGorritoDeHierro: {
+				DisplayName: Iron Beanie
+				Tooltip: The Beanie reinforced with iron. Can be reversed at a work bench.
+			}
+			ElGorritoDePlomo: {
+				DisplayName: Lead Beanie
+				Tooltip: The Beanie reinforced with lead. Can be reversed at a work bench.
+			}
+			ElGorritoDePlata: {
+				DisplayName: Silver Beanie
+				Tooltip: The Beanie reinforced with silver. Can be reversed at a work bench.
+			}
+			ElGorritoDeTungsteno: {
+				DisplayName: Tungsten Beanie
+				Tooltip: The Beanie reinforced with tungsten. Can be reversed at a work bench.
+			}
+			ElGorritoDeOro: {
+				DisplayName: Gold Beanie
+				Tooltip: The Beanie reinforced with gold. Shines with style. Can be reversed at a work bench.
+			}
+			ElGorritoDePlatino: {
+				DisplayName: Platinum Beanie
+				Tooltip: The Beanie reinforced with platinum. The finest there is. Can be reversed at a work bench.
+			}
 		}
 
 		Projectiles: {
@@ -37,6 +77,7 @@ Mods: {
 		Conditions: {
 			Quest1Done: Quest "Escape the Law" completed
 			Quest2Done: Quest "Bring the Clothes" completed
+			Quest3Done: Quest "Find the Phone" completed
 		}
 	}
 }

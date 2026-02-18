@@ -51,8 +51,7 @@ namespace FranoMod.Common.Systems
 		{
 			QuestManager.RegisterQuest(new EscaparDeLaLey());
 			QuestManager.RegisterQuest(new TraerLaRopa());
-			// Para agregar más quests, simplemente agregar líneas aquí:
-			// QuestManager.RegisterQuest(new MiNuevoQuest());
+			QuestManager.RegisterQuest(new BuscarElCelular());
 		}
 
 		public override void PostUpdateWorld()
