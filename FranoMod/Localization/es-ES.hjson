@@ -66,11 +66,18 @@ Mods: {
 				DisplayName: El Gorrito de Platino
 				Tooltip: El Gorro reforzado con platino. Lo más fino que hay. Se puede revertir en una mesa de trabajo.
 			}
+			PestoPlatino: {
+				DisplayName: Pesto Platino
+				Tooltip: "'El mismo Pesto, pero con un toque de clase.' - Frano. Auto-disparo. Inflige fuego leve."
+			}
 		}
 
 		Projectiles: {
 			PestoProjectile: {
 				DisplayName: Bala de Pesto
+			}
+			PestoPlatinoBullet: {
+				DisplayName: Bala de Pesto Platino
 			}
 		}
 

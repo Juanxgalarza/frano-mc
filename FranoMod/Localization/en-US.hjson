@@ -66,11 +66,18 @@ Mods: {
 				DisplayName: Platinum Beanie
 				Tooltip: The Beanie reinforced with platinum. The finest there is. Can be reversed at a work bench.
 			}
+			PestoPlatino: {
+				DisplayName: Pesto Platinum
+				Tooltip: "'Same Pesto, but with a touch of class.' - Frano. Auto-fire. Inflicts mild fire damage."
+			}
 		}
 
 		Projectiles: {
 			PestoProjectile: {
 				DisplayName: Pesto Bullet
+			}
+			PestoPlatinoBullet: {
+				DisplayName: Pesto Platinum Bullet
 			}
 		}
 
