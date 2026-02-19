@@ -33,7 +33,7 @@ namespace FranoMod.Content.NPCs
 			NPCID.Sets.ExtraFramesCount[Type] = 9;
 			NPCID.Sets.AttackFrameCount[Type] = 4;
 			NPCID.Sets.DangerDetectRange[Type] = 700;
-			NPCID.Sets.AttackType[Type] = 0; // Ataque a distancia
+			NPCID.Sets.AttackType[Type] = 3; // Melee (látigo) - cambia a ranged con traje
 			NPCID.Sets.AttackTime[Type] = 90;
 			NPCID.Sets.AttackAverageChance[Type] = 30;
 			NPCID.Sets.HatOffsetY[Type] = 4;
@@ -238,11 +238,38 @@ namespace FranoMod.Content.NPCs
 			return true;
 		}
 
-		// Configuración de combate del NPC (ataque ranged básico)
+		/// <summary>
+		/// Cambia dinámicamente el tipo de ataque según si tiene el traje.
+		/// Sin traje: melee con látigo de cuero. Con traje: ranged con Pesto.
+		/// </summary>
+		public override void PostAI()
+		{
+			var system = ModContent.GetInstance<FranoWorldSystem>();
+			if (system != null && system.FranoHasSuit)
+			{
+				NPCID.Sets.AttackType[Type] = 1; // Ranged (pistola)
+				NPCID.Sets.AttackTime[Type] = 90;
+			}
+			else
+			{
+				NPCID.Sets.AttackType[Type] = 3; // Melee (látigo)
+				NPCID.Sets.AttackTime[Type] = 30;
+			}
+		}
+
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
 		{
-			damage = 20;
-			knockback = 4f;
+			var system = ModContent.GetInstance<FranoWorldSystem>();
+			if (system != null && system.FranoHasSuit)
+			{
+				damage = 20;
+				knockback = 4f;
+			}
+			else
+			{
+				damage = 15;
+				knockback = 6f;
+			}
 		}
 
 		public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
@@ -251,17 +278,11 @@ namespace FranoMod.Content.NPCs
 			randExtraCooldown = 30;
 		}
 
+		// --- Ataque ranged (solo activo con traje, AttackType = 1) ---
+
 		public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
 		{
-			var system = ModContent.GetInstance<FranoWorldSystem>();
-			if (system != null && system.FranoHasSuit)
-			{
-				projType = ModContent.ProjectileType<Projectiles.PestoProjectile>();
-			}
-			else
-			{
-				projType = ProjectileID.Shuriken;
-			}
+			projType = ModContent.ProjectileType<Projectiles.PestoProjectile>();
 			attackDelay = 1;
 		}
 
@@ -269,6 +290,33 @@ namespace FranoMod.Content.NPCs
 		{
 			multiplier = 12f;
 			randomOffset = 2f;
+		}
+
+		public override void DrawTownAttackGun(ref Texture2D item, ref Rectangle itemFrame, ref float scale, ref int horizontalHoldoutOffset)
+		{
+			int pestoType = ModContent.ItemType<Pesto>();
+			Main.instance.LoadItem(pestoType);
+			item = TextureAssets.Item[pestoType].Value;
+			itemFrame = item.Frame();
+			scale = 0.8f;
+			horizontalHoldoutOffset = -4;
+		}
+
+		// --- Ataque melee con látigo (activo sin traje, AttackType = 3) ---
+
+		public override void TownNPCAttackSwing(ref int itemWidth, ref int itemHeight)
+		{
+			itemWidth = 40;
+			itemHeight = 40;
+		}
+
+		public override void DrawTownAttackSwing(ref Texture2D item, ref Rectangle itemFrame, ref int itemSize, ref float scale, ref Vector2 offset)
+		{
+			Main.instance.LoadItem(ItemID.BlandWhip);
+			item = TextureAssets.Item[ItemID.BlandWhip].Value;
+			itemFrame = item.Frame();
+			itemSize = 40;
+			scale = 0.6f;
 		}
 	}
 

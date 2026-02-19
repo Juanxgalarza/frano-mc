@@ -70,6 +70,16 @@ Mods: {
 				DisplayName: Pesto Platinum
 				Tooltip: "'Same Pesto, but with a touch of class.' - Frano. Auto-fire. Inflicts mild fire damage."
 			}
+			FraniumOre: {
+				DisplayName: Franium Ore
+				Tooltip: A mysterious dark ore with a hypnotic glow. Frano says it will change everything.
+			}
+		}
+
+		Tiles: {
+			FraniumOreTile: {
+				MapEntry: Franium
+			}
 		}
 
 		Projectiles: {
@@ -85,6 +95,7 @@ Mods: {
 			Quest1Done: Quest "Escape the Law" completed
 			Quest2Done: Quest "Bring the Clothes" completed
 			Quest3Done: Quest "Find the Phone" completed
+			Quest4Done: Quest "Mine the Franium" completed
 		}
 	}
 }

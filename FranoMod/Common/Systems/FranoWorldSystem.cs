@@ -52,6 +52,7 @@ namespace FranoMod.Common.Systems
 			QuestManager.RegisterQuest(new EscaparDeLaLey());
 			QuestManager.RegisterQuest(new TraerLaRopa());
 			QuestManager.RegisterQuest(new BuscarElCelular());
+			QuestManager.RegisterQuest(new MinarFranium());
 		}
 
 		public override void PostUpdateWorld()

@@ -70,6 +70,16 @@ Mods: {
 				DisplayName: Pesto Platino
 				Tooltip: "'El mismo Pesto, pero con un toque de clase.' - Frano. Auto-disparo. Inflige fuego leve."
 			}
+			FraniumOre: {
+				DisplayName: Mineral de Franium
+				Tooltip: Un misterioso mineral oscuro con un brillo hipnótico. Frano dice que va a cambiar todo.
+			}
+		}
+
+		Tiles: {
+			FraniumOreTile: {
+				MapEntry: Franium
+			}
 		}
 
 		Projectiles: {
@@ -85,6 +95,7 @@ Mods: {
 			Quest1Done: Quest "Escapar de la ley" completado
 			Quest2Done: Quest "Traer la ropa" completado
 			Quest3Done: Quest "Buscar el celular" completado
+			Quest4Done: Quest "Minar el Franium" completado
 		}
 	}
 }
