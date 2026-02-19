@@ -130,7 +130,7 @@ namespace FranoMod.Common.Systems
 		}
 
 		/// <summary>
-		/// Dibuja el marcador del cofre del quest en el mapa completo.
+		/// Dibuja el marcador del cofre del quest en el mapa fullscreen (tecla M).
 		/// </summary>
 		public override void PostDrawFullscreenMap(ref string mouseText)
 		{
@@ -141,7 +141,6 @@ namespace FranoMod.Common.Systems
 			float chestTileX = chestWorld.X / 16f;
 			float chestTileY = chestWorld.Y / 16f;
 
-			// Convertir coordenadas de tile a coordenadas del mapa fullscreen
 			float mapScale = Main.mapFullscreenScale;
 			Vector2 mapCenter = Main.mapFullscreenPos;
 			float screenCenterX = Main.screenWidth / 2f;
@@ -150,26 +149,81 @@ namespace FranoMod.Common.Systems
 			float mapX = (chestTileX - mapCenter.X) * mapScale + screenCenterX;
 			float mapY = (chestTileY - mapCenter.Y) * mapScale + screenCenterY;
 
-			// Verificar si está visible en el mapa
 			if (mapX < -20 || mapY < -20 || mapX > Main.screenWidth + 20 || mapY > Main.screenHeight + 20)
 				return;
 
-			// Dibujar un marcador simple (cuadrado rojo con borde)
+			DrawMarker(Main.spriteBatch, mapX, mapY, 12);
+
 			var markerRect = new Rectangle((int)mapX - 6, (int)mapY - 6, 12, 12);
-			var borderRect = new Rectangle((int)mapX - 7, (int)mapY - 7, 14, 14);
-
-			SpriteBatch spriteBatch = Main.spriteBatch;
-			Texture2D pixel = Terraria.GameContent.TextureAssets.MagicPixel.Value;
-
-			spriteBatch.Draw(pixel, borderRect, Color.Black);
-			spriteBatch.Draw(pixel, markerRect, Color.Yellow);
-
-			// Tooltip al pasar el mouse
 			if (markerRect.Contains(Main.mouseX, Main.mouseY))
 			{
 				string questName = QuestManager.GetCurrentQuestName() ?? "Quest";
 				mouseText = $"[Quest] {questName}";
 			}
+		}
+
+		/// <summary>
+		/// Dibuja el marcador del cofre en el minimapa y el overlay map.
+		/// </summary>
+		public override void PostDrawInterface(SpriteBatch spriteBatch)
+		{
+			if (QuestManager == null || QuestManager.ActiveChestMarker == Vector2.Zero)
+				return;
+
+			if (!Main.mapEnabled || Main.mapFullscreen)
+				return;
+
+			Vector2 chestWorld = QuestManager.ActiveChestMarker;
+			float chestTileX = chestWorld.X / 16f;
+			float chestTileY = chestWorld.Y / 16f;
+			float playerTileX = Main.LocalPlayer.Center.X / 16f;
+			float playerTileY = Main.LocalPlayer.Center.Y / 16f;
+
+			if (Main.mapStyle == 1)
+			{
+				// Minimapa (esquina)
+				float scale = Main.mapMinimapScale;
+				int mX = Main.miniMapX;
+				int mY = Main.miniMapY;
+				int mW = Main.miniMapWidth;
+				int mH = Main.miniMapHeight;
+
+				float screenX = mX + mW / 2f + (chestTileX - playerTileX) * scale;
+				float screenY = mY + mH / 2f + (chestTileY - playerTileY) * scale;
+
+				// Recortar al área del minimapa
+				if (screenX < mX || screenY < mY || screenX > mX + mW || screenY > mY + mH)
+					return;
+
+				DrawMarker(spriteBatch, screenX, screenY, 8);
+			}
+			else if (Main.mapStyle == 2)
+			{
+				// Overlay map (pantalla completa semi-transparente)
+				float scale = Main.mapOverlayScale;
+
+				float screenX = Main.screenWidth / 2f + (chestTileX - playerTileX) * scale;
+				float screenY = Main.screenHeight / 2f + (chestTileY - playerTileY) * scale;
+
+				if (screenX < -20 || screenY < -20 || screenX > Main.screenWidth + 20 || screenY > Main.screenHeight + 20)
+					return;
+
+				DrawMarker(spriteBatch, screenX, screenY, 10);
+			}
+		}
+
+		/// <summary>
+		/// Dibuja un marcador cuadrado amarillo con borde negro.
+		/// </summary>
+		private static void DrawMarker(SpriteBatch spriteBatch, float x, float y, int size)
+		{
+			int half = size / 2;
+			var borderRect = new Rectangle((int)x - half - 1, (int)y - half - 1, size + 2, size + 2);
+			var markerRect = new Rectangle((int)x - half, (int)y - half, size, size);
+
+			Texture2D pixel = Terraria.GameContent.TextureAssets.MagicPixel.Value;
+			spriteBatch.Draw(pixel, borderRect, Color.Black);
+			spriteBatch.Draw(pixel, markerRect, Color.Yellow);
 		}
 	}
 }
