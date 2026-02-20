@@ -74,6 +74,14 @@ Mods: {
 				DisplayName: Mineral de Franium
 				Tooltip: Un misterioso mineral oscuro con un brillo hipnótico. Frano dice que va a cambiar todo.
 			}
+			EspadaDeFranium: {
+				DisplayName: Espada de Franium
+				Tooltip: "'Una hoja oscura que emana energía gelatinosa.' Lanza orbes de Franium al atacar. Sin costo de maná."
+			}
+			BaculoDeFranium: {
+				DisplayName: Báculo de Franium
+				Tooltip: "'El poder concentrado del Franium en una vara.' Dispara orbes gelatinosos grandes y potentes."
+			}
 		}
 
 		Tiles: {
@@ -88,6 +96,12 @@ Mods: {
 			}
 			PestoPlatinoBullet: {
 				DisplayName: Bala de Pesto Platino
+			}
+			FraniumOrbSmall: {
+				DisplayName: Orbe de Franium
+			}
+			FraniumOrbLarge: {
+				DisplayName: Orbe de Franium Mayor
 			}
 		}
 

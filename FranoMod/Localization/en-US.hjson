@@ -74,6 +74,14 @@ Mods: {
 				DisplayName: Franium Ore
 				Tooltip: A mysterious dark ore with a hypnotic glow. Frano says it will change everything.
 			}
+			EspadaDeFranium: {
+				DisplayName: Franium Sword
+				Tooltip: "'A dark blade that emanates gelatinous energy.' Fires Franium orbs on swing. No mana cost."
+			}
+			BaculoDeFranium: {
+				DisplayName: Franium Staff
+				Tooltip: "'The concentrated power of Franium in a staff.' Fires large, powerful gelatinous orbs."
+			}
 		}
 
 		Tiles: {
@@ -88,6 +96,12 @@ Mods: {
 			}
 			PestoPlatinoBullet: {
 				DisplayName: Pesto Platinum Bullet
+			}
+			FraniumOrbSmall: {
+				DisplayName: Franium Orb
+			}
+			FraniumOrbLarge: {
+				DisplayName: Greater Franium Orb
 			}
 		}
 
